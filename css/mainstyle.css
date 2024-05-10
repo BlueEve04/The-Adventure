@@ -1,0 +1,46 @@
+.gamespace {
+    height: 400px;
+    width: 200px;
+    position: relative;
+    left:7%;
+    margin-top: 40px;
+}
+
+.gamespace .otpt {
+    font-family: "Courier New", Courier, monospace;
+    /* 使用等宽字体 */
+    font-size: 29px;
+    /* 设置字符大小，也是字符的高度 */
+    line-height: 17px;
+    /* 设置行高等于字符高度 */
+}
+
+.contr {
+    display: flex;
+    position: fixed;
+    bottom: 5px;
+    width: 93%;
+    height: 100px;
+    margin: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgb(70, 70, 70);
+    opacity: 0.5;
+    backdrop-filter: blur(20px);
+    background-color: rgba(65, 65, 65, 0.267);
+}
+
+.contr .btn1 {
+    flex: 0.2;
+    margin: 20px;
+    background-color: rgb(75, 75, 75);
+    border-radius: 20px;
+}
+
+.contr .ipt1 {
+    flex: 0.8;
+    margin: 20px;
+    background-color: rgb(165, 165, 165);
+    opacity: 0.6;
+    font-size: 40px;
+    border-radius: 20px;
+}
