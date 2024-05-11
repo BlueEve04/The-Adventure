@@ -1,4 +1,5 @@
 var pst = 44;
+var hp=100;
 var startscr;
 var dir = 1;
 var jl = 5;
@@ -6,6 +7,9 @@ var myhp = 100;
 var fillrate = 10;
 let brick = new Array(fillrate + 1).fill(0);
 var isnotok = 0;
+var zf=50;
+let zblock=new Array(zf+1).fill(1);
+var defen=2.5;
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -25,7 +29,7 @@ function replaceNthChar(str, n, newChar) {
 }
 
 
-function Generate() {
+function Generate_Main() {
     // 获取文本框中的内容
     fillrate = document.getElementById('userInput').value;
     var text = '';
@@ -63,45 +67,90 @@ function Generate() {
     
     startscr = replaceNthChar(text, pst, '*');
     // 将获取的内容设置为下方标签的文本内容
+    GenerateZom();
+}
+function GenerateZom() {
+    // 获取文本框中的内容
+    
+    for (var i = 1; i <= zf; i++) {
+        isnotok = 0;
+        zblock[i] = getRandomInt(1, 1200);
+        //console.log('lucky brick num ',brick[i])
+        
+        
+    }
+        //console.log("num ",brick[i]," 'si rate is " ,isnotok,";")
+        // if (isnotok === 0) {
+            for(var i=1;i<=zf;i+=1){
+            let af = startscr;
+            af = replaceNthChar(af, zblock[i], 'z');
+            startscr=af;
+        // }
+            } 
+    // 将获取的内容设置为下方标签的文本内容
     document.getElementById('output').textContent = startscr;
+    document.getElementById('hp').textContent=hp;
 }
 
+function ZomBeh(){
+
+}
+
+
+function HPloss(){
+    hp-=20-defen;
+    document.getElementById('hp').textContent=hp;
+    if(hp<=0){
+        document.getElementById('stat').textContent='你死了'
+        document.removeEventListener('keydown',function (event){});
+    }
+}
 document.addEventListener('DOMContentLoaded', function () {
+    
     document.addEventListener('keydown', function (event) {
         outer:
         if (event.keyCode === 87) {
             console.log('按下了 w 键');
+            dir = 1;
             
-            for(var k=1;k<=fillrate;k++){
                 if(startscr[pst-61]==='■'){
                     console.log('wall here!')
                     break outer;
                 }
+                if(startscr[pst-61]==='z'){
+                    console.log('zombie here!')
+                    HPloss();
+                }
                 
-            }
+            
             let bf = startscr;
             let endst = replaceNthChar(bf, pst - 61, '*');
             endst = replaceNthChar(endst, pst, '□');
             pst -= 61;
             startscr = endst;
-            dir = 1;
+            
             document.getElementById('output').textContent = startscr;
             console.log('now pst to ', pst);
         }
         outer:
         if (event.keyCode === 65) {
+            dir = 2
             console.log('按下了 a 键');
-            for(var k=1;k<=fillrate;k++){
+            
                 if(startscr[pst-1]==='■'){
                     console.log('wall here!')
                     break outer;
                 }
-                
-            }
+                if(startscr[pst-1]==='z'){
+                    console.log('zombie here!')
+                    HPloss();
+                }
+            
+            
             if (pst === 61) {
                 pst -= 1;
             }
-            dir = 2
+            
             let bf = startscr;
             let endst = replaceNthChar(bf, pst - 1, '*');
             endst = replaceNthChar(endst, pst, '□');
@@ -113,13 +162,17 @@ document.addEventListener('DOMContentLoaded', function () {
         outer:
         if (event.keyCode === 83) {
             console.log('按下了 s 键');
-            for(var k=1;k<=fillrate;k++){
+            
                 if(startscr[pst+61]==='■'){
                     console.log('wall here!')
                     break outer;
                 }
+                if(startscr[pst+61]==='z'){
+                    console.log('zombie here!')
+                    HPloss();
+                }
                 
-            }
+            
             dir = 3;
             let bf = startscr;
             let endst = replaceNthChar(bf, pst + 61, '*');
@@ -132,13 +185,17 @@ document.addEventListener('DOMContentLoaded', function () {
         outer:
         if (event.keyCode === 68) {
             console.log('按下了 d 键');
-            for(var k=1;k<=fillrate;k++){
+            
                 if(startscr[pst+1]==='■'){
                     console.log('wall here!')
                     break outer;
                 }
+                if(startscr[pst+1]==='z'){
+                    console.log('zombie here!')
+                    HPloss();
+                }
                 
-            }
+            
             dir = 4;
             if (pst === 59) {
                 pst += 1;

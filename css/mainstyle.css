@@ -5,7 +5,17 @@
     left:7%;
     margin-top: 40px;
 }
-
+.data{
+    display: flex;
+    font-size: 50px;
+    margin-left: 10%;
+}
+.data .d1{
+    flex: 0.2;
+}
+.data .hp{
+    flex: 0.15;
+}
 .gamespace .otpt {
     font-family: "Courier New", Courier, monospace;
     /* 使用等宽字体 */
