@@ -5,17 +5,44 @@
     left:7%;
     margin-top: 40px;
 }
-.data{
+.data {
     display: flex;
-    font-size: 50px;
+    font-size: 40px;
     margin-left: 10%;
 }
-.data .d1{
-    flex: 0.2;
+.data .life{
+    flex: 0.5;
+    display: flex;
 }
-.data .hp{
-    flex: 0.15;
+.data .tired{
+    flex: 0.5;
+    display: flex;
 }
+
+.close{
+    border-radius: 30px;
+    margin: 10px;
+}
+.inst{
+    font-size: 20px;
+    margin-left: 50px;
+    height: 380px;
+    width: 80%;
+    background-color: rgba(74, 74, 74, 0.281);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(85, 85, 85);
+}
+.inst p{
+    margin: 10px;
+    text-align: center;
+    color: rgb(4, 67, 10);
+}
+.item p{
+    margin: 10px;
+    text-align: center;
+    color: rgb(4, 67, 10);
+}
+
 .gamespace .otpt {
     font-family: "Courier New", Courier, monospace;
     /* 使用等宽字体 */
@@ -24,7 +51,26 @@
     line-height: 17px;
     /* 设置行高等于字符高度 */
 }
-
+.main{
+    display: flex;
+    margin-right: 50px;
+}
+.main .inst{
+    flex:0.5;
+}
+.main .item{
+    flex: 0.5;
+}
+.item{
+    font-size: 20px;
+    margin-left: 10%;
+    height: 380px;
+    width: 80%;
+    background-color: rgba(74, 74, 74, 0.281);
+    border-radius: 20px;
+    margin-left: 30px!important;
+    box-shadow: 0 0 10px rgb(85, 85, 85);
+}
 .contr {
     display: flex;
     position: fixed;

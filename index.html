@@ -26,17 +26,43 @@
     <div class="gamespace">
         <p id="output" class="otpt"></p>
     </div>
-    <div class="inst">
-        <p>说明</p>
-        <p>这个游戏中你是"*","z"就是僵尸</p>
-        <p>传统wasd移动，r发射子弹，直接撞击僵尸视为肉搏，将视装备扣血！！</p>
+    <div class="main">
+        <div class="inst">
+            <!-- <button class="close" id="cls">关闭提示</button> -->
+            <p>说明</p>
+            <p>这个游戏中你是"*","z"就是僵尸</p>
+            <p>传统wasd移动，r发射子弹，直接撞击僵尸视为肉搏，将视装备扣血！！</p>
+            <div class="fl">
+                <p>你现在在楼层</p>
+                <p id="flo">0</p>
+            </div>
+            <p id="stat">状态正常</p>
+            <p class="ps"> ___ </p>
+        </div>
+        <div class="item">
+            <p>你的物品</p>
+            <p id="i1"></p>
+            <p id="i2"></p>
+            <p id="i3"></p>
+            <p id="i4"></p>
+            <p id="i5"></p>
+            <p id="i6"></p>
+            <p id="i7"></p>
+            <p id="i8"></p>
+            <p id="i9"></p>
+
+        </div>
     </div>
     <div class="data">
-        <p class="d1"> 生命</p>
-        <p id="hp" class="hp">NaN</p>
-        
+        <div class="life">
+            <p class="d1"> 生命 </p>
+            <p id="hp" class="hp">NaN</p>
+        </div>
+        <div class="tired">
+            <p class="tir"> 体力 </p>
+            <p id="td" class="tirnum">NaN</p>
+        </div>
     </div>
-    <p id="stat">状态正常</p>
 
     </p>
     <div class="contr">
@@ -46,7 +72,7 @@
 
 
     <script>
-        
+
 
 
     </script>
